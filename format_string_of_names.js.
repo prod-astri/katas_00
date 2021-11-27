@@ -1,8 +1,19 @@
 const list1 = [ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ]
+
+const list2 = []
 // returns 'Bart, Lisa & Maggie'
 
-function list(names){
-  console.log(names)
+
+function list(names){   
+    return names.map((name, index, names) => {
+        if (index === names.length - 1) {
+            return name.name;
+        } else if (index === names.length - 2){
+            return name.name + ' & '; 
+        } else {
+            return name.name + ', ';
+        }
+    }).join('') 
 }
 
 console.log(list(list1))
