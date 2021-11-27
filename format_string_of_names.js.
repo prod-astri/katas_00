@@ -1,0 +1,9 @@
+const list1 = [ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ]
+// returns 'Bart, Lisa & Maggie'
+
+function list(names){
+  console.log(names)
+}
+
+console.log(list(list1))
+console.log(list(list2))
