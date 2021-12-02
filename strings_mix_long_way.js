@@ -36,6 +36,13 @@ function mix(s1, s2) {
         } else {
             return -1
         }
+    }).sort((a, b) => {
+        if (a.length !== b.length) return 0;
+        else {
+            if (a[0] > b[0]){
+                return 1;
+            }
+        }
     })
     console.log('final', finalArray)
     return finalArray.join('/');
