@@ -39,20 +39,22 @@ function mix(s1, s2) {
     generateString(uniques1, s1, 1)
   ).concat(
     generateString(uniques2, s2, 2)
-  ).sort((a, b) => {
-    if (b.length < a.length) return -1
-    else if (a.length === b.length) {
-      if (a[0] < b[0]) {
-        return -1;
-      } else if (a[0] > b[0]) {
-        return 1
-      } else {
-        if (b[2] > a[2]) {
-          console.log('hi')
-          return -1;
-        } else return 0
-      }
-    }
+  ).sort((a, b) => { 
+    if (a.length !== b.length)
+    return b.length - a.length
+    // if (b.length < a.length) return -1
+    // else if (a.length === b.length) {
+    //   if (a[0] < b[0]) {
+    //     return -1;
+    //   } else if (a[0] > b[0]) {
+    //     return 1
+    //   } else {
+    //     if (b[2] > a[2]) {
+    //       console.log('hi')
+    //       return -1;
+    //     } else return 0
+    //   }
+    // }
   });
 
   console.log('S', solutionArray)
@@ -77,7 +79,7 @@ function uniqueLowerCase(string) {
   )
 }
 
-// console.log(mix('aaaaaabbbbaaccddeeee', 'bbccccddddeeeeffff'));
+console.log(mix('aaaaaabbbbaaccddeeee', 'bbccccddddeeeeffff'));
 console.log(mix('Are they here', 'yes, they are here'));
 // "2:eeeee/2:yy/=:hh/=:rr"
 console.log(mix('looping is fun but dangerous', 'less dangerous than coding'));
