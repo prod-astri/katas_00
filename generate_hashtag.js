@@ -1,6 +1,18 @@
-function generateHashtag (str) {
+function generateHashtag(str) {
+    const sol = str
+      .split(' ')
+      .filter((str) => str !== ' ')
+      .map((str) => capitalizeFirstLetter(str))
+      .join('');
+    const len = sol.length;
   
-}
+    if (len <= 0 || len >= 140) return false;
+    else return '#' + sol;
+  }
+  
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
 generateHashtag("")
 // false
